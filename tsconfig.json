@@ -1,63 +1,23 @@
 {
   "compilerOptions": {
-    // Base options
     "esModuleInterop": true,
-
-    // Skip type checking of all declaration files (*.d.ts)
     "skipLibCheck": true,
-
-    // Specify ECMAScript target version
     "target": "ES2022",
-
-    // Allow JavaScript files to be compiled
     "allowJs": true,
-
-    // Specify module type for JavaScript files, it mean every file in the repo will be treated as a module, even if it doesn't have any imports or exports
     "moduleDetection": "force",
-
-    // Enable all strict type-checking options - libraries assume we are working in a strict mode
     "strict": true,
-
-    // Disallow unchecked access to indexed properties
     "noUncheckedIndexedAccess": true,
-
-    // Ensure that each file can be safely transpiled in isolation
     "isolatedModules": true,
-
-    /* if transpiling with Typescript, aka using typescript to convert your TS files into JS */
-    // Specify module resolution strategy
     "moduleResolution": "node",
-
-    // Specify module code generation
     "module": "ES2022",
-
-    // Redirect output structure to the directory
     "outDir": "./dist",
-
-    // Generate corresponding .map file, and .map is useful for debugging the code
     "sourceMap": true,
-
-    /* if we are building for a library */
-    // "declaration": true, // Generate corresponding .d.ts file
-
-    /* if we are building for a lib in a monorepo */
-    // "composite": true, // Enable project references
-    // "declarationMap": true, // Generate sourcemap for d.ts files
-    // Ensure that casing is correct in imports
     "forceConsistentCasingInFileNames": true,
-
-    // Allow default imports from modules with no default export
     "allowSyntheticDefaultImports": true,
-
     "inlineSources": true,
-
-    // Set `sourceRoot` to  "/" to strip the build path prefix
-    // from generated source code references.
-    // This improves issue grouping in Sentry.
     "sourceRoot": "/",
     "noImplicitAny": false,
     "baseUrl": "./",
-    // Configure paths to be used in the project
     "paths": {
       "*": ["*", "*.ts", "*.js"]
     },
