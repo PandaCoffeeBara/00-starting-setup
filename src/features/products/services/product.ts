@@ -1,9 +1,10 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import path from 'path';
+import process from 'process';
 import logger from '../../../utils/logger';
 
 const fullPath = path.join(
-  path.dirname(require.main?.filename ?? ''),
+  process.cwd(),
   'data',
   'products.json'
 );

@@ -1,5 +1,7 @@
 import { Response, Request } from "express";
 import { Product } from '../../products/services/product';
+import logger  from '../../../utils/logger';
+import { HTTPError } from "../../../utils/errors/HTTPError";
 
 export const getAddProduct = (_req: Request, res: Response) => {
   res.render('admin/add-product', {
@@ -19,7 +21,11 @@ export const postAddProduct = async (req: Request, res: Response) => {
     res.status(201).json({ message: 'Product added successfully', product });
   }catch(error){
     logger.error('Error adding product:', error);
-    res.status(500).json({ message: 'Internal server error', error: error.message });
+    if (error instanceof HTTPError) {
+      res.status(error.statusCode).json({ message: error.message });
+      return;
+    }
+    res.status(500).json({ message: 'Unknown server error'});
   }
 };
 

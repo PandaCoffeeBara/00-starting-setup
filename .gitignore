@@ -55,3 +55,5 @@ log.txt
 # OS generated files
 .DS_Store
 Thumbs.db
+# Sentry Config File
+.sentryclirc

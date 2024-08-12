@@ -8,10 +8,9 @@ const customFormat = printf(({ level, message, timestamp }) => {
 
 /**
  * Winston logger
- * 
  */
 const logger = createLogger({
-    level: 'info',
+    level: process.env.LOG_LEVEL || 'info',
     format: combine(
         label({ label: 'right meow!' }),
         timestamp(),
@@ -20,8 +19,8 @@ const logger = createLogger({
     ),
     transports: [
         new transports.Console(),
-        new transports.File({ filename: 'logs/error.log', level: 'error' }),
-        new transports.File({ filename: 'logs/combined.log' }),
+        new transports.File({ filename: `${process.env.LOG_DIR}/error-%DATE%.log`, level: 'error' }),
+        new transports.File({ filename: `${process.env.LOG_DIR}/combined-%DATE%.log` }),
     ]
 });
 

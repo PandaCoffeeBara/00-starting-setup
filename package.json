@@ -5,13 +5,15 @@
   "main": "app.ts",
   "type": "module",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc  && npm run sentry:sourcemaps",
     "test": "jest",
     "lint": "npx eslint",
     "lint:fix": "npm run lint --fix",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage",
-    "start": "nodemon --exec ts-node ./app.ts"
+    "start": "npx tsx watch app.ts",
+    "start:production": "node ./dist/app.js",
+    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org highfive-ja --project node ./dist && sentry-cli sourcemaps upload --org highfive-ja --project node ./dist"
   },
   "author": "Angel Petrov",
   "license": "ISC",
@@ -24,6 +26,7 @@
     "@types/supertest": "^6.0.2",
     "@typescript-eslint/eslint-plugin": "^8.0.1",
     "@typescript-eslint/parser": "^8.0.1",
+    "dotenv-safe": "^9.1.0",
     "eslint": "^9.9.0",
     "eslint-plugin-react": "^7.35.0",
     "globals": "^15.9.0",
@@ -37,8 +40,12 @@
     "typescript-eslint": "^8.0.1"
   },
   "dependencies": {
+    "@sentry/cli": "^2.33.1",
+    "@sentry/node": "^8.25.0",
+    "@sentry/profiling-node": "^8.25.0",
     "@types/winston": "^2.4.4",
     "body-parser": "^1.18.3",
+    "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.16.3",
     "express-handlebars": "^8.0.1",
