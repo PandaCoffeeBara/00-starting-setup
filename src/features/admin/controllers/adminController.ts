@@ -1,5 +1,6 @@
 import { Response, Request } from "express";
 import { Product } from '../../products/services/product';
+
 import logger  from '../../../utils/logger';
 import { HTTPError } from "../../../utils/errors/HTTPError";
 
@@ -17,7 +18,9 @@ export const postAddProduct = async (req: Request, res: Response) => {
   try{
     const { title, imageUrl, price, description } = req.body;
     const product = new Product(title, imageUrl, description, price);
+
     await product.save();
+    
     res.status(201).json({ message: 'Product added successfully', product });
   }catch(error){
     logger.error('Error adding product:', error);
@@ -25,7 +28,7 @@ export const postAddProduct = async (req: Request, res: Response) => {
       res.status(error.statusCode).json({ message: error.message });
       return;
     }
-    res.status(500).json({ message: 'Unknown server error'});
+    res.status(500).json({ message: 'Internal server error'});
   }
 };
 
