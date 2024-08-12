@@ -28,6 +28,18 @@ export default [
   {
     languageOptions: { globals: globals.browser, ecmaVersion: 2022 }
   },
+  {
+    settings: {
+      'import/resolver': {
+        node: {
+          extensions: ['.js', '.ts'],
+        },
+      },
+      react: {
+        version: 'detect',
+      },
+    },
+  },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,

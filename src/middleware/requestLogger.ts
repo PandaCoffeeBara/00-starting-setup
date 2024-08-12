@@ -13,9 +13,8 @@ const requestLogger: RequestHandler = (req, res, next) => {
             statusCode: res.statusCode,
             duration: `${duration}ms`
         });
-        
-        next()
     });
+    next()
 }
 
 export default requestLogger;
