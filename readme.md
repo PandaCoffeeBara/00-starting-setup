@@ -12,11 +12,11 @@ Build with React for the frontend and Node.js for the backend.
 - **Authentication**: Users can sign up, log in, and log out.
 - **Standard E-commerce Shop**: Users can browse products, add them to their cart, and checkout.
 
-## Getting Started 
+## Getting Started
 
 ### Prerequisites
 
-Ensure you have the following installed on your system 
+Ensure you have the following installed on your system
 
 - LTS version of Node.js: [Download and install](https://nodejs.org/)
 - A package manager: [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) or [pnpm](https://pnpm.io/)
@@ -28,7 +28,7 @@ Ensure you have the following installed on your system
 
 ```bash
 git clone [TODO: Add the repository URL]
-``` 
+```
 
 2. Navigate to the project directory
 
@@ -67,14 +67,14 @@ docker-compose up --build
 ## Project Structure
 
 The project is structured as follows:
-
-- `src`: Contains the source code for the project.
-  - `assets`: General static public assets such as images, icons and base stylesheet.
-  - `components`: General shared components.
-  - `data`: Hardcoded data to load or the data layer of the projects [data docs](src/data/readme.md).
-  - `features`: Feature based organisation, for details see the [features docs](src/features/readme.md).
-  - `layouts`: Contains components that are responsible for the layout of the web app [layout docs](src/layouts/readme.md).s 
-  - `views`: Contains the pages of the web app.
-  - `services`: Contains services that interact with external APIs or services.
-  - `utils`: Contains utility functions that are used across the project.
   
+```plaintext
+coding-refresher-hub/
+├── packages/ - Monorepo packages
+│   ├── api-server/ - Node.js backend
+│   ├── react-frontend/ - React frontend
+├── doc/ 
+│   ├── adr/ - Architecture Decision Records
+├── .env.example - Environment variables example
+
+```

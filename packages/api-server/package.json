@@ -1,20 +1,14 @@
 {
-  "name": "code-refresher-hub",
+  "name": "api-server",
   "version": "1.0.0",
-  "description": "Complete Node.js Guide",
-  "type": "module",
-  "workspaces": [
-    "packages/*"
-  ],
+  "main": "app.ts",
   "scripts": {
-    "build": "npx lerna run build",
-    "test": "npx lerna run test",
-    "lint": "npx lerna run lint"
+    "build": "tsc && npm run sentry:sourcemaps",
+    "test": "jest",
+    "dev": "npx tsx watch app.ts",
+    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org highfive-ja --project node ./dist && sentry-cli sourcemaps upload --org highfive-ja --project node ./dist"
   },
-  "author": "Angel Petrov",
-  "license": "ISC",
   "devDependencies": {
-    "@eslint/js": "^9.9.0",
     "@types/body-parser": "^1.19.5",
     "@types/express": "^4.17.21",
     "@types/jest": "^29.5.12",
@@ -23,14 +17,12 @@
     "@typescript-eslint/eslint-plugin": "^8.0.1",
     "@typescript-eslint/parser": "^8.0.1",
     "eslint": "^9.9.0",
-    "eslint-plugin-react": "^7.35.0",
     "jest": "^29.7.0",
-    "lerna": "^7.4.2",
-    "prettier": "^3.3.3",
-    "supertest": "^7.0.0",
     "ts-jest": "^29.2.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4",
+    "prettier": "^3.3.3",
+    "supertest": "^7.0.0",
     "typescript-eslint": "^8.0.1"
   },
   "dependencies": {
@@ -45,5 +37,8 @@
     "helmet": "^7.1.0",
     "winston": "^3.13.1",
     "winston-logstash": "^1.2.1"
-  }
+  },
+  "author": "Angel Petrov",
+  "license": "ISC",
+  "description": ""
 }
