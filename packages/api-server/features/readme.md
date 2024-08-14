@@ -15,16 +15,6 @@ The feature folder should follow the following structure:
 
 ```plaintext
 feature-name/
-├── components/
-│   ├── Component1.tsx
-│   ├── Component2.tsx
-│   └── index.ts
-├── hooks/
-│   ├── useHook1.ts
-│   ├── useHook2.ts
-│   └── index.ts
-├── routes/
-│   ├── index.ts // export routes
 ├── controllers/ // Controllers handle incoming http requests, passes work off to services, and returns a response.
 │   ├── featureController.ts // Controller responsible for handling feature logic
 │   ├── index.ts // centralize the exports\

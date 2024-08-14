@@ -10,7 +10,7 @@ Accepted
 
 The current project structure consists of a monorepo that contains a frontend and a backend application at the time of writing, both using Node.js and Typescript. As the complexity and scale of the project is projected to grow over time, I face a challenge in managing dependecnies, building and deploying the project. I will need a solutioon to streamline the development process, ensure the consistency across projects and improve the ability to manage shared dependencies.
 
-### Key Issues:
+### Key Issues
 
 1. **Dependency Management**: The current project structure does not provide a clear way to manage dependencies across the frontend and backend applications. This can lead to inconsistencies in the versions of shared dependencies and make it difficult to manage the dependencies effectively.
 2. **Build and Run scripts**: There is no centralkized way to build and run the projects leading to potential duplication of scripts and risk of discrepancies in the build and run process.
