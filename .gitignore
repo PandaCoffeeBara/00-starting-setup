@@ -20,17 +20,17 @@ logstash/
 *.sublime-project
 *.sublime-workspace
 
-# Build output
-/dist/
-/out/
-/build/
+# Build output in any directories or subdirectories
+**/dist/
+**/build/
+**/out/
 
 # Dependency directories
 /.pnp/
 .pnp.js
 
 # Testing
-/coverage/
+**/coverage/
 
 # Environment variables
 .env
