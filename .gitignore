@@ -24,7 +24,7 @@ logstash/
 **/dist/
 **/build/
 **/out/
-
+.nx
 # Dependency directories
 /.pnp/
 .pnp.js
