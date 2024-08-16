@@ -6,6 +6,7 @@
     "build": "tsc && npm run sentry:sourcemaps",
     "test": "jest",
     "dev": "npx tsx watch app.ts",
+    "lint": "eslint .",
     "sentry:sourcemaps": "sentry-cli sourcemaps inject --org highfive-ja --project node ./dist && sentry-cli sourcemaps upload --org highfive-ja --project node ./dist"
   },
   "devDependencies": {
