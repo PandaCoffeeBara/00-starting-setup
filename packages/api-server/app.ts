@@ -10,7 +10,6 @@ import bodyParser from 'body-parser';
 import helmet from 'helmet';
 import { setupExpressErrorHandler } from '@sentry/node';
 
-import notFound from './controllers/notFound';
 import requestLogger from './middleware/requestLogger';
 import errorHandler from './middleware/errorHandler';
 import { apiRouter } from './routes';
@@ -34,9 +33,6 @@ app.use('api', apiRouter)
 app.get("/debug-sentry", function mainHandler() {
     throw new Error("My first Sentry error!");
 })
-
-app.all('*', notFound);
-
 
 // --- Error Handling ---
 // Sentry error handler must be the first middleware for error handling
