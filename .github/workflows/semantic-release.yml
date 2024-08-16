@@ -12,18 +12,11 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/checkout@v4
         with:
-          node-version: '20.16.0'
-          cache: 'npm'
+            persist-credentials: false
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run semantic-release
+      - name: Semantic release
+        uses: cycjimmy/semantic-release-action@v4
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: npx semantic-release
